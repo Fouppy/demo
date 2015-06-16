@@ -1,0 +1,117 @@
+<!-- ALL CONTENTS -->
+<div class="demo-main">
+  <!-- BIG TITLE HERE -->
+  <section class="title_container">
+    <div class="page-section-content">
+      <div class="container page-section text-center">
+        <h2 class="uppercase undertitle">Contact me</h2>
+        <div class="diamond-line">
+          <i class="de-separator"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--! BIG TITLE HERE -->
+
+  <!-- MAP -->
+  <div class="google-maps ">
+    <div id="map2" data-lat="-12.043333" data-lng="-77.028333"></div>
+  </div>
+  <!--! MAP -->
+
+  <div class="clear-section"></div>
+  
+  <div class="container" ng-controller="FormCtrl">
+
+    <div class="main cl_8 first">        
+      <h5 class="uppercase">Lets Get In Touch!</h5>
+      <p>Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit <a data-animated-link="fadeOut" href="#">consequat</a> ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Nec sagittis sem nibh id elit. Aenean sollicitudin, lorem quis bibendum auctor. Nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p>
+      <br>
+      <p>Duis sed odio sit amet nibh vulputate, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus duis sed odio sit amet nibh vulputate, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.</p>
+      <div class="clear"></div>
+      <div class="clear"></div>
+      <h5 class="uppercase">Send us an email</h5>
+      <div class="clear"></div>
+
+      <!-- Form -->
+      <form id="contact" action="" class="form-small form text-center" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+        <div class="post  di_1_of_3 first  ">
+          <div class="field">
+            <input id="name" name="name" type="text" placeholder="Name" ng-model="name" required>
+            <div ng-show="userForm.$submitted || userForm.name.$touched">
+              <p ng-show="userForm.name.$error.required">Tell us your name.</p>
+            </div>
+          </div>
+        </div>
+        <div class="post  di_1_of_3  ">
+          <div class="field">
+            <input id="email" name="email" type="email" placeholder="Email" ng-model="email" required>
+            <div ng-show="userForm.$submitted || userForm.email.$touched">
+              <p ng-show="userForm.email.$error.required">Tell us your email.</p>
+              <p ng-show="userForm.email.$error.email">This is not a valid email.</p>
+            </div>
+          </div>
+        </div>
+        <div class="post  di_1_of_3  ">
+          <div class="field">
+            <input id="subject" name="subject" type="text" placeholder="Subject" ng-model="subject" required>
+            <div ng-show="userForm.$submitted || userForm.subject.$touched">
+              <p ng-show="userForm.subject.$error.required">Please write a message</p>
+            </div>
+          </div>
+        </div>
+        <div class="field  ">
+          <textarea id="message" name="message" class="  textarea" placeholder="Message" ng-model="message" required></textarea>
+          <div ng-show="userForm.$submitted || userForm.message.$touched">
+            <p ng-show="userForm.message.$error.required">Please write a message</p>
+          </div>
+        </div>
+        <input type="submit" value="SEND" class="no-rounded button small fill" ng-click="update(user)" ng-disabled="userForm.$invalid">
+      </form>
+      <!--! Form -->
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside role="complementary" class="main sidebar cl_4">
+      <!-- CONTACT INFO -->
+      <div class="widget">
+        <h5 class="widget-title uppercase">Contact Info</h5>
+        <div class="widget-content">
+          <ul class="contact-icon">
+            <li>
+              <i class="fa fa-map-marker "></i>
+              <p>Bluett Avenue, Seaview, Isle of Wight PO34, UK</p>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>
+              <p>+213 2020 555013</p>
+              <p>+213 7700 900106</p>
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              <p>Emal1@domain.com</p>
+              <p>Emal2@domain.com</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--! CONTACT INFO -->
+
+      <!-- SOCIAL NETWORKS -->
+      <div class="widget">
+        <div class="widget-content">
+          <ul class="social-media social-big inline clearfix">
+            <li><a data-animated-link="fadeOut" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a data-animated-link="fadeOut" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a data-animated-link="fadeOut" href="#"><i class="fa fa-github"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <!--! SOCIAL NETWORKS -->
+    </aside>
+    <!--! SIDEBAR -->
+  </div>
+
+  <div class="clear-section"></div>
+</div>
+<!--! ALL CONTENTS -->

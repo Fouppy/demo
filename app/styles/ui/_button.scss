@@ -1,0 +1,262 @@
+ /*--- button colors ---*/
+
+ $button-color:(
+  di_white:#FFFFFF,
+  di_green:#1abc9c,
+  di_header:$header-font-color,
+  di_pink:#e73f97,
+  di_blue:#33c6f4,
+  di_red:#e74c3c,
+  di_yellow:#f1c40f,
+  di_orange:#e57e25,
+  di_darckblue:#2d4356,
+  di_darck:#5e5d57,
+  di_gray:#C0C0C0
+  );
+  
+  
+ /*--- button ---*/
+
+ .button {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  font-family: $font-family-headings;
+  outline: none;
+  margin: 0em;
+  margin-bottom: 10px;
+  min-height: 1em;
+  padding:0.8em 2em;
+  background-color: $default-btn-bg-color;
+  border:1px solid $btn-border-color;  
+  font-size: 1rem;
+  font-weight: $btn-weight;
+  font-style: normal;
+  text-align: center;
+  line-height: 1;
+  text-decoration: none;
+  
+  min-width: 160px;
+  @include user-select(none);
+  @include box-sizing(order-box); 
+  @include transition(all .2s ease-in);
+  
+  @if($radius-var!=0){
+    @include border-radius($radius-var);
+  }
+
+  -webkit-backface-visibility: hidden;
+
+  i{
+    position: absolute;
+    @include start(0px);
+    top: 0;
+    height: 100%;
+    width: 35%;
+    font-size: inherit;    
+  }
+
+}
+
+/*--- button fill ---*/
+
+.fill{
+ color: $fill-btn-color;
+ @if $border != '0'{
+  border:$border solid $btn-border-color;
+ }
+ 
+ &:hover{  
+  color: $fill-btn-color-hover;
+  background-color: darken($default-btn-bg-color,10%);
+}
+
+i{
+  line-height: 40px;   
+}
+}
+
+/*--- button stroke ---*/
+
+.stroke{
+  background: rgba(255,255,255,0.0) !important;
+  color: $btn-stroke-color ;
+  @include transition(all .2s ease-in);
+  z-index: 10;
+  &:after {
+    content: '';
+    position: absolute;
+    @include start(0);
+    top: 0;
+    height: 0%;
+    width: 100%;
+    @include transition(all .2s ease-in);  
+    z-index: 5;    
+  }
+
+  i{
+    background:(0,0,0,0) !important;
+    line-height: 40px;   
+    @include transition(all .1s ease-in);
+  }
+  &:hover{
+   color: $btn-stroke-color-hover !important;
+   background-image:none !important; 
+ }
+}
+
+.stroke[data-direction="down"]:hover:after {
+  background: $btn-border-color;
+  color: #FFF;
+  height: 100%;
+  z-index: -1;
+}
+
+
+/*--- button block ---*/
+
+.button-block {
+  display: block;
+  width: 100%;
+  @include padding-start(0);
+  @include padding-end(0);
+  @include box-sizing(border-box);
+}
+
+/*--- button Disabled ---*/
+
+.disabled.button,
+.disabled.button:hover,
+.disabled.button.active {
+  background-color: #DDDDDD !important;
+  cursor: default;
+  color: rgba(0, 0, 0, 0.5) !important;
+  border-color:rgba(0, 0, 0, 0.5) !important;
+  opacity: 0.3 !important;
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/*--------------------
+ *     icons
+ --------------------*/
+
+.icon {
+  @include padding-start(2em!important);
+  @include padding-end(1.4em!important);
+}
+
+/*--------------------
+ *     Color
+ --------------------*/
+
+ @each $ClassNmae, $color in $button-color {
+
+   .#{$ClassNmae}.button  {
+    
+    background-color: $color;
+    @if $border != '0'{
+      border:$border solid $color;
+    }
+    
+    @if $ClassNmae =='di_white' {
+      color: $header-font-color;
+    }@else {
+      color: $default-btn-color;  
+    }
+  }
+
+  .#{$ClassNmae}.stroke {
+    
+    @if $border != '0'{
+      border:$border solid $color;
+    }
+    color: $color ;
+    i{
+      @include border-end(1px solid $color);
+      background:(0,0,0,0) !important;
+      @include transition(all .1s ease-in);
+    }
+
+    &:hover{
+      @if $ClassNmae =='di_white' {
+        color: $header-font-color !important;
+      }
+      @else  {
+        color: $btn-stroke-color-hover !important;
+        background-image:none !important;
+        i{
+          @include border-end(1px solid $btn-stroke-color-hover);   
+        } 
+      }     
+    }
+   
+  }
+
+  .#{$ClassNmae}.stroke[data-direction="down"]:hover:after {
+    background: $color;
+    height: 100%;
+    z-index: -1;
+  }
+  .#{$ClassNmae}.fill:hover {
+      color: $fill-btn-color-hover;
+      background-color: darken($color,10%);
+      border:$border solid darken($color,10%);
+  }
+}
+
+/*---------------------
+ *      Sizes
+ *--------------------*/
+
+ @mixin btn_size($font-size,$padding,$line-height,$font-weight,$min-width){
+  font-size: $font-size;
+  font-weight: $font-weight;
+  min-width: $min-width;
+  @if($padding != ''){
+   padding: $padding;
+ }
+ 
+ i{
+  line-height: $line-height;
+  }
+}
+
+.tiny {
+  @include btn_size(12px,6px 12px,25px,$btn-weight,80px);
+}
+
+.mini{
+  @include btn_size(14px,10px 16px,32px,$btn-weight,120px);
+}
+
+.small {
+  @include btn_size(16px,14px 20px,45px,$btn-weight,160px);
+}
+
+.large {
+  @include btn_size(18px,18px 24px,55px,$btn-weight,180px);
+}
+
+.big {
+  @include btn_size(20px,22px 28px,65px,$btn-weight,190px);
+}
+
+.huge {
+  @include btn_size(22px,26px 32px,77px,$btn-weight,200px);
+}
+
+/*---------------------
+ *      Rounded
+ *--------------------*/
+
+.no-rounded{
+  @include border-radius(0);
+}
+
+.Pill{
+  @include border-radius(18em);
+}

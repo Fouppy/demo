@@ -1,0 +1,153 @@
+/***********************************************************************************************/
+/* GENERAL TYPOGRAPHY STYLES */
+/***********************************************************************************************/
+
+$baseLineHeight: 1.5;
+$leading: $p+10;
+$scale: 1.414;
+
+html{
+     font-size: $base-font-size / 14 * 100% ;
+     -webkit-font-smoothing: antialiased ;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-headings;
+    font-weight: $h-weight;
+    color: $header-font-color;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    margin-bottom: .5em;
+    line-height: $leading;
+    @include adjust-leading-to(5, 16);
+    a {
+        color: $header-link-color;
+    }
+    span {
+        &.highlight {
+            color: #FFFFFF;
+            background-color: $theme-color;
+            @include multi-box-shadow(8px 0 0 $theme-color, -8px 0 0 $theme-color);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.65);
+            line-height: 43px;
+        }
+    }
+}
+.article {
+    h3, h4, h5, h6 {
+        padding: 1.5em 0 .5em;
+    }
+}
+h1 {
+    @include font-size($h1, $leading * 3);
+    @include transition(.1);
+    letter-spacing: 0.05em;
+}
+h2 {
+    @include font-size($h2, $leading * 2);
+    @include transition(.1);
+}
+h3 {
+    @include font-size($h3, $leading);
+    @include transition(.1);
+    letter-spacing: 0.025em;
+}
+h4 {
+    @include font-size($h4, $h4);
+    @include transition(.1);
+    letter-spacing: 0.025em;
+}
+h5 {
+    @include font-size($h5, $h5);
+    @include transition(.1);
+    letter-spacing: 0.01em;
+}
+h6 {
+    @include font-size($h6, $h6);
+    font-weight: 600;
+    @include transition(.1);
+}
+caption {
+    font-size: 0.667rem
+}
+small {
+    font-size: 0.444rem
+}
+a {
+    color: $body-link-color;
+    text-decoration: none;
+    outline: 0;
+    line-height: inherit;
+    max-width: 100%;
+    max-width: none\9;
+    &:hover {
+        color: $body-link-hover-color;
+    }
+}
+a:hover, a:focus, a:visited {
+    outline: 0;
+}
+p a, p a:visited {
+    line-height: inherit;
+}
+p {
+    font-family: $font-family-base;
+    font-weight: $font-weight-medium;
+    color: $body-text-color;
+    @include font-size($p, $leading);
+    letter-spacing: 0.01em;
+    word-spacing: 0.01em;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    margin: 0;
+    hyphens: auto;
+    &.lead {
+        @include font-size(12 * 1.25);
+        margin-bottom: ms(1);
+    }
+    &.article {
+        @include font-size(12 * 1.25);
+        padding: .75em 0;
+    }
+    &.section {
+        padding: 0 5%;
+        font-size: 1.35em;
+        line-height: 1.6em;
+        color: inherit;
+        margin: 0 0 2.6em;
+        font-weight: 100;
+    }
+}
+/*******************************
+        Highlighted Colors
+*******************************/
+
+::-webkit-selection {
+    background-color: $theme-color;
+    color: #FFFFFF;
+}
+::-moz-selection {
+    background-color: $theme-color;
+    color: #FFFFFF;
+}
+::selection {
+    background-color: $theme-color;
+    color: #FFFFFF;
+}
+/*******************************
+        Word-Wrap
+*******************************/
+
+%breakword {
+    word-wrap: break-word;
+}
+%normal-wrap {
+    word-wrap: normal;
+}
+%auto-wrap {
+    word-wrap: auto;
+}
+body {
+    @extend %breakword;
+}

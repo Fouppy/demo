@@ -1,0 +1,48 @@
+$font-family-base: "Lato", Helvetica, Arial, sans-serif;
+$font-family-headings: "Open Sans", Helvetica, Georgia, Times, serif;
+$FontAwesome: "FontAwesome";
+$demoIcon: "Demo-Icons";
+
+/**
+ * [size description]
+ * @type {[type]}
+ */
+
+$base-font-size:14; /*Base font size use on all pages*/
+$font-unit: if($relative-font-sizing, 1, $base-font-size);
+
+/**
+ * [Headers size]
+ * @type {px}
+ */
+
+$h1:60;
+$h2:36;
+$h3:28;
+$h4:22;
+$h5:18;
+$h6:14;
+$p:14;
+
+/**
+ * [Font Weights]
+ * @type {Number}
+ */
+
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-medium: 400;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+$font-weight-thin: 100;
+$body-font-weight:400;
+
+
+/**
+ * font-weight
+ */
+$p-weight:$font-weight-medium;
+$h-weight:$font-weight-bold;
+$quote-weight:$font-weight-light;
+$btn-weight:$font-weight-semibold;
+$nav-weight:$font-weight-medium;

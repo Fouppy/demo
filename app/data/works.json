@@ -1,0 +1,110 @@
+[
+	{
+		"id": 1,
+		"link": "#",
+		"src_home_small": "images/works/work-1.jpg",
+		"src_home_big": "images/works/work-1@2x.jpg",
+		"src_folio_small": "images/works/work-1-mc.jpg",
+		"src_folio_big": "images/works/work-1-mc@2x.jpg",
+		"masonry": "75",
+		"category": "Prints",
+		"class": "di_1_of_4",
+		"title": "Front End"
+	},
+	{
+		"id": 2,
+		"link": "#",
+		"src_home_small": "images/works/work-2.jpg",
+		"src_home_big": "images/works/work-2@2x.jpg",
+		"src_folio_small": "images/works/work-2-mc.jpg",
+		"src_folio_big": "images/works/work-2-mc@2x.jpg",
+		"masonry": "75",
+		"category": "Logos",
+		"class": "di_1_of_4",
+		"title": "Front End"
+	},
+	{
+		"id": 3,
+		"link": "#",
+		"src_home_small": "images/works/work-3.jpg",
+		"src_home_big": "images/works/work-3@2x.jpg",
+		"src_folio_small": "images/works/work-3-mc.jpg",
+		"src_folio_big": "images/works/work-3-mc@2x.jpg",
+		"masonry": "145",
+		"category": "Graphics",
+		"class": "di_1_of_4",
+		"title": "Front End"
+	},
+	{
+		"id": 4,
+		"link": "#",
+		"src_home_small": "images/works/work-4.jpg",
+		"src_home_big": "images/works/work-4@2x.jpg",
+		"src_folio_small": "images/works/work-4-mc.jpg",
+		"src_folio_big": "images/works/work-4-mc@2x.jpg",
+		"masonry": "75",
+		"category": "Prints",
+		"class": "di_1_of_4",
+		"title": "Front End"
+	},
+	{
+		"id": 5,
+		"link": "#",
+		"src_home_small": "images/works/work-5.jpg",
+		"src_home_big": "images/works/work-5@2x.jpg",
+		"src_folio_small": "images/works/work-5-mc.jpg",
+		"src_folio_big": "images/works/work-5-mc@2x.jpg",
+		"masonry": "30",
+		"category": "Graphics",
+		"class": "di_1_of_2",
+		"title": "Front End"
+	},
+	{
+		"id": 6,
+		"link": "#",
+		"src_home_small": "images/works/work-6.jpg",
+		"src_home_big": "images/works/work-6@2x.jpg",
+		"src_folio_small": "images/works/work-6-mc.jpg",
+		"src_folio_big": "images/works/work-6-mc@2x.jpg",
+		"masonry": "75",
+		"category": "Graphics",
+		"class": "di_1_of_4",
+		"title": "Front End"
+	},
+	{
+		"id": 7,
+		"link": "#",
+		"src_home_small": "images/works/work-2.jpg",
+		"src_home_big": "images/works/work-2@2x.jpg",
+		"src_folio_small": "images/works/work-7-mc.jpg",
+		"src_folio_big": "images/works/work-7-mc@2x.jpg",
+		"masonry": "75",
+		"category": "Prints",
+		"class": "di_1_of_4",
+		"title": "Front End"
+	},
+	{
+		"id": 8,
+		"link": "#",
+		"src_home_small": "images/works/work-2.jpg",
+		"src_home_big": "images/works/work-2@2x.jpg",
+		"src_folio_small": "images/works/work-8-mc.jpg",
+		"src_folio_big": "images/works/work-8-mc@2x.jpg",
+		"masonry": "30",
+		"category": "Graphics",
+		"class": "di_1_of_2",
+		"title": "Front End"
+	},
+	{
+		"id": 9,
+		"link": "#",
+		"src_home_small": "images/works/work-3.jpg",
+		"src_home_big": "images/works/work-3@2x.jpg",
+		"src_folio_small": "images/works/work-1-mc.jpg",
+		"src_folio_big": "images/works/work-1-mc@2x.jpg",
+		"masonry": "75",
+		"category": "Logos",
+		"class": "di_1_of_4",
+		"title": "Front End"
+	}
+]

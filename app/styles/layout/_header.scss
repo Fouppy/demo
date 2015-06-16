@@ -1,0 +1,25 @@
+/***********************************************************************************************/
+/* HEADER */
+/***********************************************************************************************/
+
+header {
+    width: 100%;
+}
+.demo-main {
+    position: relative;
+    float: none;
+    display: block;
+    width: auto;
+    .demo-page-wrapper {
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+/* Container Title*/
+
+.title_container {
+    background: $title_con_bg;
+    .topaz-line {
+        margin-bottom: 0px;
+    }
+}

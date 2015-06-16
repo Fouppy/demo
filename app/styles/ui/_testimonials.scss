@@ -1,0 +1,62 @@
+/*******************/
+
+/*  testimonials   */
+
+/*******************/
+
+.demo-testimonial {
+    position: relative;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+
+    &.quote-style{
+      blockquote{
+        width: 100%;
+        font-style: italic;
+        &:before{
+            content:'';
+            margin-top: 0px;
+          }
+          
+          p{
+            color: #FFF;
+            @include font-size(24,30);
+            margin-bottom: 35px;
+            font-weight: $quote-weight;
+          }
+          .demo-testimonial-meta {
+            color: $theme-color;
+            @include font-size($base-font-size,$base-font-size+2);
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+      }
+    }
+    blockquote {
+        overflow: hidden;
+        @if($border-radius!=0) {
+            @include border-radius($border-radius);
+        }
+        
+        &:before {
+            content: "\f10d";
+            font-family: "FontAwesome";
+            @include font-size(25, 30);
+            color: $theme-color;
+            vertical-align: -0.4em;
+            float: left;
+            @include margin-end(20px);
+            margin-top: 7px;
+            font-style: normal;
+        }
+        @include border-start(none);
+        @include padding-start(0);
+      }
+}
+
+.owl-item {
+  .demo-testimonial{
+    margin-bottom: 0px !important;
+  }
+}

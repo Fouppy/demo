@@ -1,0 +1,214 @@
+    /*
+     *
+     *1:Desktop - Extra Large
+     *2:Desktop - Large
+     *3:Tablet  - Portrait
+     *4:Mobile  - Portrait
+     *5:Mobile  - Landscape
+     *6:Mobile - Portrait & Landscape
+     *7:Tablet & Mobile - Portrait & Landscape
+     *
+     */
+     
+
+    /*1: #Desktop - Extra Large====================================*/
+    
+    @media only screen and (min-width: $DesktopExtraLarge) {
+        @include hide-on(EL);
+        @include visible-on(EL);
+    }
+    /*!1: #Desktop - Extra Large====================================*/
+    /*2: #Desktop - Large=======================================*/
+    
+    @media only screen and (min-width: $DesktopLarge) {
+        @include hide-on(L);
+        @include visible-on(L);
+    }
+    
+    /*!2: #Desktop - Large=======================================*/
+    /*3: #Tablet (Portrait)==============*/
+    
+    @media only screen and (min-width: $TabletPortraitMin) and (max-width: $TabletPortraitMax) {
+        @include hide-on(TP);
+        @include visible-on(TP);
+        //--->portfolio        
+        .isotope-item {
+            .link_overlay:hover .work-info {
+                bottom: 6%;
+            }
+        }
+        .with-margin{
+            .isotope-item {
+               padding: 0 0.7% 10px 0.7% !important;
+            }
+        }
+        /*Pricing Table*/
+        
+        div {
+            &.di_1_of_4 {
+                width: 48.5%;
+            }
+            &.di_1_of_4:nth-child(4n+3) {
+                margin-top: 30px;
+                @include margin-start(0);
+            }
+            &.di_1_of_4:nth-child(4n) {
+                margin-top: 30px;
+            }
+        }
+        //--->portfolio        
+        .page-section-content .page-section.app {
+            margin-bottom: 80px;
+        }
+        //services
+        .services p {
+            padding: 0px !important;
+        }
+        //IconBox
+        .no-box.box-square header i, .box-circle header i {
+            width: 85px;
+            height: 85px;
+            font-size: 45px;
+            line-height: 85px;
+        }
+        .no-box.features-start.box-square .features-content, .features-start.box-circle .features-content {
+            @include padding-start(110px);
+        }
+        .no-box.features-end.box-square .features-content, .features-end.box-circle .features-content {
+            @include padding-end(110px);
+        }
+    }
+    /*3: #Tablet (Portrait)==============*/
+    /*4: #Mobile (Portrait)==============*/
+    
+    @media only screen and (max-width: $MobilePortrait) {
+        @include hide-on(MP);
+        @include visible-on(MP);
+
+        .filters-box.filters ul li {
+            display: inline-block;
+            float: left;
+            width: 47%;
+        }
+    }
+    /*!4: #Mobile (Portrait)==============*/
+    /*5: #Mobile (Landscape) =================*/
+    
+    @media only screen and (min-width: $MobileLandscapeMin) and (max-width: $MobileLandscapeMax) {
+        @include hide-on(ML);
+        @include visible-on(ML);
+        .filters-box.filters ul li {
+            display: inline-block;
+            float: left;
+            width: 31%;
+        }
+    }
+    /*!5: #Mobile (Landscape) =================*/
+    /*6: #Mobile (Landscape & Portrait) =================*/
+    
+    @media only screen and (max-width: $MobileLandscapeMax) {
+        @include hide-on(M);
+        @include visible-on(M);
+        html {
+            font-size: 85%;
+        }
+        .hide-on-m {
+            display: none !important;
+        }
+        //Title Container
+        .title_container {
+            h2 {
+                text-align: center;
+            }
+            .page-section-content {
+                padding: 50px 0;
+            }
+        }
+        //**//
+        .page-section-content {
+            padding: $section-padding-mini 0;
+        }
+        //Icon Box
+        .no-box.box-square header i, .box-circle header i {
+            width: 80px;
+            height: 80px;
+            font-size: 35px;
+            line-height: 80px;
+        }
+        .no-box.features-start.box-square .features-content, .features-start.box-circle .features-content {
+            @include padding-start(90px);
+        }
+        .no-box.features-end.box-square .features-content, .features-end.box-circle .features-content {
+            @include padding-end(90px);
+        }
+    }
+    /*!6: #Mobile (Landscape & Portrait) =================*/
+    /*7: #Mobile & Tablat (Portrait & Landscape) =================*/
+    
+    @media only screen and (max-width: $TabletPortraitMax) {
+        @include hide-on(TM);
+        @include visible-on(TM);
+        html {
+            font-size: 90%;
+        }
+        .hide-on-mt {
+            display: none !important;
+        }
+        .diamond-line {
+            margin-top: 25px 0;
+        }
+        .clear-section {
+            padding-bottom: 50px;
+        }
+        /*-Google Map-*/
+        
+        .google-maps {
+            height: 300px;
+        }
+        .title_container {
+            &.start-style {
+                h2 {
+                    text-align: center;
+                }
+                .demo-breadcrumbs {
+                    margin-top: 20px;
+                    text-align: center;
+                    width: 100%;
+                }
+                .page-section-content {
+                    padding: 50px 0 70px 0;
+                }
+            }
+        }
+        /*Headings*/
+        
+        h1 {
+            @include font-size(40, 36);
+        }
+        h2 {
+            @include font-size(25, 36);
+        }
+        h3 {} h4 {} h5 {
+            @include font-size(15, 18);
+        }
+        /*Icon box*/
+        
+        .margin-bottom li {
+            margin-bottom: 30px !important;
+        }
+        .box-square, .box-circle {
+            &.features-start.no-box header i, &.features-end.no-box header i {
+                display: block;
+            }
+        }      
+       
+        //***//
+        .social-media { figure
+            li {
+                margin-bottom: 10px;
+            }
+        }
+
+
+    }
+    /*!7: #Mobile & Tablat (Landscape) =================*/

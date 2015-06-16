@@ -1,0 +1,222 @@
+//Icons Colors
+$social-icons:(
+  facebook:   #3B5998,          
+  adn:   #504e54,
+  android:   #A5C63B,
+  apple:   #aeb5c5,
+  bitbucket:   #003366,
+  bitcoin:   #F7931A,
+  css3:             #1572B7,
+  html5:            #E54D26,
+  instagram:        #A1755C,
+  linkedin:         #0085AE,
+  linux:            #FBC002,
+  maxcdn:           #F6AE1C,
+  pagelines:        #241E20,
+  renren:           #025DAC,
+  skype:            #01AEF2,
+  stack-exchange:   #245590,
+  stack-overflow:   #FF7300,
+  trello:     #265A7F,
+  xing:       #00555C,
+  vk:         #375474,
+  weibo:      #D72B2B,
+  windows:    #12B6F3,
+  twitter:    #55ACEE,
+  google:     #DD4B39,
+  dribbble:   #EA4C89,
+  forrst:     #335D30,
+  youtube:    #FF3333,
+  about-me:   #FFCC33,
+  foursquare: #0CBADF,
+  tumblr:     #2C4762,
+  vimeo:      #1AB7EA,
+  quora:      #A82400,
+  soundcloud: #FF6600,
+  virb:       #00B0D8,
+  bebo:       #EE1010,
+  pinterest:  #CB2027,
+  myspace:    #0CBADF,
+  flickr:     #FF0084,
+  delicious:  #285DA7,
+  last-fm:    #D51007,
+  vine:       #00AA7F,
+  github:     #4183C4,
+  grooveshark:#F77F00,
+  spotify:    #7AB800,
+  dropbox:    #1F8CE6,
+);
+
+@each $ClassNmae, $color in $social-icons {
+    .#{$ClassNmae} {
+      a{        
+        color: $color;
+      }
+      border: 1px solid $color !important;
+      &:hover{
+        background: $color !important;
+        border: 1px solid $color !important;
+      }      
+    }
+}
+.white-icons{
+    a{        
+        color: #FFFFFF;
+      }
+      border: 1px solid #FFFFFF !important;
+      &:hover{
+        background: $theme-color !important;
+      }
+}
+
+/*Portfolio features icons*/
+$icons:(
+  url:   "\f0c1",
+  heart: "\f08a",
+  heart-o:  "\f08a",
+  file-text-o:"\f0f6",
+  play:   "\f16a",
+);
+
+@each $ClassNmae, $icon in $icons {
+    .icon-#{$ClassNmae}:before {
+        content: $icon;
+    }
+}
+
+.box{
+  header{
+   .icon-header {
+      position: absolute ;
+      line-height: 49px ;
+      height: 65px ;
+      width: 65px ;
+      font-size: 30px ;
+      color: $theme-color ;
+      top: -37.5px ;
+      @include start(50%);
+      background: $body-bg-color ;
+      padding: 10px;
+      @include margin-start(30px);
+      @include border-radius(999px);
+   }
+ }
+}
+
+.flat-icon {
+    display: inline-block;
+    overflow: hidden;
+    text-transform: uppercase;
+    color:$body-bg-color !important;
+    @include transition(all .2s ease-in);
+    &:hover{
+      background:$body-bg-color !important;
+      text-shadow: none !important;
+      color: $theme-color  !important;
+      border:1px solid $theme-color;
+    }
+}
+
+.social-media{
+
+  &.social-medium li{    
+    a{
+            display: inline-block;
+            @include font-size(22,50);
+            width: 50px;
+            height: 50px;
+            padding: 0;
+    }
+  }
+  &.social-small li{    
+      a{
+          display: inline-block;
+          @include font-size(18,32);
+          width: 32px;
+          height: 32px;
+      }
+  }
+  &.social-big li{      
+      a{
+        @include font-size(30,64);
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+      }
+  }
+
+  &.demo-social-post{
+    margin-top: 30px;
+    border-top: 1px solid lighten($border-color,17%);
+    padding-top: 30px;
+    text-align: center;    
+      li{
+          float:  none;
+          margin-bottom: 8px;          
+      }
+ }
+
+ &.demo-social-author {
+            margin-bottom: 1px;
+            @include margin-start(1px);           
+  }
+
+  &.demo-social-footer,&.demo-show{            
+            li{                
+                border: 1px solid $footer-bordre-color;
+                @include margin-end(10px); 
+          }
+  }
+
+  &.demo-show{
+          li{
+              border: 1px solid $border-color;
+              a{
+                color: $header-font-color;
+              }             
+          }
+  }
+
+  li{      
+      cursor: pointer;
+      border: 1px solid $border-color;
+      text-align: center;
+      @include float_start();
+      a{
+        @include font-size(30,64);   
+        font-family: $FontAwesome;
+
+      }
+      @include transition(all .2s ease-in);
+
+      &:hover{
+        border: 1px solid $theme-color;
+        background: $theme-color;
+        a i{
+          color: #FFFFFF; 
+        }
+      }
+  }
+
+}
+
+/*Contact us*/
+.contact-icon{
+  li{
+    i{
+      @include font-size(20,35);
+      @include text_align_start();
+      @include float-start();
+    }
+    p{
+      @include padding-start(30px);
+    }
+  }
+}
+.circle-social {
+    ul {
+        li {
+            @include border-radius(80px);
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<!-- ALL CONTENTS -->
+<div class="demo-main">
+
+  <!-- BIG TITLE HERE -->
+  <section class="title_container">
+    <div class="page-section-content">
+      <div class="container page-section text-center">
+        <h2 class="uppercase undertitle">Portfolio</h2>
+        <div class="diamond-line">
+          <i class="de-separator"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--! BIG TITLE HERE -->
+
+  <!-- SECTION -->
+  <section class="section" ng-controller="PortfolioCtrl">
+    <div class="page-section-content">
+      <!-- WORKS SECTION -->
+      <div class="section masonry text-center" id="works">
+        <!-- FILTER MENU -->
+        <nav role="navigation" class="filters-box filters" id="filters">
+          <ul>
+            <li><a ng-click="filters.category = ''">All</a></li>
+            <li><a ng-click="filters.category = 'Graphics'">Graphics</a></li>
+            <li><a ng-click="filters.category = 'Prints'">Prints</a></li>
+            <li><a ng-click="filters.category = 'Logos'">Logos</a></li>
+          </ul>
+        </nav>
+        <!--! FILTER MENU -->
+
+        <div masonry class="isotope">
+          <div class="boxed-portfolio column_4">
+            <!-- WORK -->
+            <div ng-repeat="work in works | filter:filters" class="masonry-brick isotope-item no-margin {{work.class}} {{work.category}}">
+              <div class="work-item">
+                <div class="demo-masonry-{{work.masonry}}"></div>
+                <img ng-src="{{work.src_folio_small}}" alt="{{work.title}}">
+                <div class="link_overlay">
+                  <ul class="icons-media">
+                    <li><a data-animated-link="fadeOut" href="{{work.src_folio_big}}" data-lightbox="image"><i class="fa fa-search"></i></a></li>
+                  </ul>
+                  <div class="work-info">
+                    <div class="work-teitel text-center">
+                      <p>{{work.title}}</p>
+                    </div>
+                  </div>
+                  <span class="diamond-hover"></span>
+                </div>
+              </div>
+            </div>
+            <!--! WORK -->
+          </div>
+        </div>
+
+        <div class="double-clear"></div>
+      </div>
+      <!--! WORKS SECTION -->
+    </div>
+  </section>
+  <!--! SECTION -->
+</div>
+<!--! ALL CONTENTS -->

@@ -1,0 +1,35 @@
+/***********************************************************************************************/
+/* GENERAL */
+/*************************************************************************************************/
+
+html.responsive, .responsive body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-kerning: normal;
+    -moz-font-kerning: normal;
+    font-kerning: normal;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga", "kern";
+    font-feature-settings: "liga", "kern";
+}
+body {
+    direction: $global-direction;
+    @include text_align_start();
+    color: $body-text-color;
+    background-color: $body-bg-color;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    font-weight: $font-weight-regular;
+    font-family: $font-family-base;
+    overflow-x: hidden;
+    background-position: 0% 0%;
+    @include font-size($base-font-size, $base-font-size+2);
+}
+.demo-content {
+    padding: 1em;
+    padding-top: 30px;
+}

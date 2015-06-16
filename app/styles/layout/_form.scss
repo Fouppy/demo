@@ -1,0 +1,292 @@
+/*--------------------
+        Form
+---------------------*/
+
+$form-lable-color:$header-font-color;
+$form-lable-color-focus:$theme-color;
+$form-bg-color:rgba(0, 0, 0, 0);
+$form-border-color:$border-color;
+$form-border-color-focus:$theme-color;
+$form-color:#727272;
+
+::-webkit-input-placeholder {
+    color: $header-font-color;
+}
+
+
+::-moz-placeholder {
+    color: $header-font-color;
+}
+.form {
+    position: relative;
+    max-width: 100%;
+    font-size: 1em;
+}
+
+/*.form :first-child {
+  margin-top: 0em;
+}
+
+.form :last-child {
+  margin-bottom: 0em;
+}*/
+/*--------------------
+        Content
+---------------------*/
+
+.form > p {
+    margin: 1em 0;
+}
+/*--------------------
+        Field
+---------------------*/
+
+.form .field {
+    clear: both;
+    margin: 0em 0em 30px;
+    overflow: hidden;
+    &.last {
+        margin-bottom: 0;
+    }
+}
+/*--------------------
+        Labels
+---------------------*/
+
+.field > label {
+    margin: 0 0 10px;
+    display: block;
+    color: $form-lable-color;
+    font-family: $font-family-base $font-family-headings;
+    @include font-size(14, 14);
+    &.error {
+        color: #C10000;
+        @include font-size(12, 11);
+        margin-top: 5px;
+        padding: 0;
+    }
+    &.required {
+        &:after {
+            content: '*';
+            color: $theme-color;
+            @include margin-start(5px);
+        }
+    }
+}
+/*--------------------
+    Standard Inputs
+---------------------*/
+
+textarea, select, input[type="text"], input[type="email"], input[type="date"], input[type="password"], input[type="number"], input[type="url"], input[type="tel"], .input {
+    width: 100%;
+}
+select {
+    background: transparent url("../images/br_down.png") no-repeat 94%;
+}
+textarea, select, input[type="text"], input[type="email"], input[type="date"], input[type="password"], input[type="number"], input[type="url"], input[type="tel"] {
+    margin: 0em;
+    padding: 16px;
+    //@include font-size(14,14);
+    background-color: $form-bg-color;
+    border: 1px solid $form-border-color;
+    outline: none;
+    color: $form-color;
+    @include transition(all .3s ease-in);
+    @include box-shadow(0em 0em 0em 0em rgba(0, 0, 0, 0.3) inset);
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    @include box-sizing(border-box);
+    &.transparent {} &.darck {
+        background-color: rgba(0, 0, 0, .6);
+    }
+    &.light {
+        background-color: rgba(0, 0, 0, .6);
+    }
+}
+/*************/
+/*  Theme    */
+/*************/
+.textarea, .form textarea {
+    line-height: 1.33;
+    min-height: 8em;
+    height: 12em;
+    max-height: 24em;
+    resize: none;
+}
+textarea, input[type="checkbox"], input[type="radio"] {
+    vertical-align: top;
+}
+input[type="checkbox"], input[type="radio"] {
+    -webkit-appearance: none;
+    outline: none;
+}
+input.checkbox, input[type="checkbox"], input.radio, input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    border: 1px solid $border-color;
+    @include margin-end(10px);
+    font-family: $font-family-base $font-family-headings;
+    vertical-align: middle;
+}
+input.radio, input[type="radio"] {
+    @include border-radius(50%);
+}
+input.checkbox:checked, input[type="checkbox"]:checked, input.radio:checked, input[type="radio"]:checked {
+    &:before {
+        display: block;
+        content: "\f00c";
+        position: relative;
+        font-family: $FontAwesome;
+        top: 50%;
+        @include start(50%);
+        font-size: 10px;
+        @include margin-start(-5px);
+        margin-top: -5px;
+    }
+}
+input.radio:checked, input[type="radio"]:checked {
+    &:before {
+        content: "\f111";
+        top: 50%;
+        @include start(50%);
+        font-size: 8px;
+        @include margin-start(-3px);
+        margin-top: -5px;
+    }
+}
+/*******************************
+            States
+*******************************/
+/*--------------------
+        Focus
+---------------------*/
+
+.form input[type="text"]:focus, .form input[type="email"]:focus, .form input[type="date"]:focus, .form input[type="password"]:focus, .form input[type="number"]:focus, .form input[type="url"]:focus, .form input[type="tel"]:focus, .form textarea:focus {
+    border-color: $form-border-color-focus !important;
+    -webkit-appearance: none;
+    @if($global-direction == "ltr") {
+        @include box-shadow(0.3em 0em 0em 0em $theme-color inset);
+    }
+    @else {
+        @include box-shadow(-0.3em 0em 0em 0em $theme-color inset);
+    }
+
+}
+/*--------------------
+        ERROR
+---------------------*/
+
+.form .field.error textarea, .form .field.error input[type="text"], .form .field.error input[type="email"], .form .field.error input[type="date"], .form .field.error input[type="password"], .form .field.error input[type="number"], .form .field.error input[type="url"], .form .field.error input[type="tel"], .form .field .ng-invalid.ng-touched {
+    background-color: #FFFAFA;
+    border-color: #E7BEBE;
+    @include border-start(none);
+    color: #D95C5C;
+    @include padding-start(1.2em);
+
+    @if($global-direction == "ltr") {
+        @include box-shadow(0.3em 0em 0em 0em #D95C5C inset);
+    }
+    @else {
+        @include box-shadow(-0.3em 0em 0em 0em #D95C5C inset);
+    }
+    
+}
+/*--------------------
+    Focus ERROR
+---------------------*/
+
+.form .field.error textarea:focus, .form .field.error input[type="text"]:focus, .form .field.error input[type="email"]:focus, .form .field.error input[type="date"]:focus, .form .field.error input[type="password"]:focus, .form .field.error input[type="number"]:focus, .form .field.error input[type="url"]:focus {
+    border-color: rgba(255, 80, 80, 1);
+    color: rgba(255, 80, 80, 1);
+    -webkit-appearance: none;
+
+    @if($global-direction == "ltr") {
+        @include box-shadow(0.3em 0em 0em 0em #FF5050 inset);
+    }
+    @else {
+        @include box-shadow(-0.3em 0em 0em 0em #FF5050 inset);
+    }
+
+}
+/*--------------------
+       Success
+---------------------*/
+
+.form .field.success textarea, .form .field.success input[type="text"], .form .field.success input[type="email"], .form .field.success input[type="date"], .form .field.success input[type="password"], .form .field.success input[type="number"], .form .field.success input[type="url"], .form .field.success input[type="tel"], .form .field .ng-valid.ng-touched {
+    background-color: #FAFFFA;
+    border-color: #7cb342 ;
+    @include border-start(none);
+    color: #7cb342 ;
+    @include padding-start(1.2em);
+    @if($global-direction == "ltr") {
+        @include box-shadow(0.3em 0em 0em 0em #7cb342 inset);
+    }
+    @else {
+        @include box-shadow(-0.3em 0em 0em 0em #7cb342 inset);
+    }
+
+    opacity: 0.9;
+}
+/*--------------------
+    Focus Success
+---------------------*/
+
+.form .field.success textarea:focus, .form .field.success input[type="text"]:focus, .form .field.success input[type="email"]:focus, .form .field.success input[type="date"]:focus, .form .field.success input[type="password"]:focus, .form .field.success input[type="number"]:focus, .form .field.success input[type="url"]:focus, .form .field.success input[type="tel"]:focus {
+    opacity: 1;
+}
+/*--------------------
+  Empty (Placeholder)
+---------------------*/
+/* browsers require these rules separate */
+
+.form::-webkit-input-placeholder {
+    color: #AAAAAA;
+}
+.form::-moz-placeholder {
+    color: #AAAAAA;
+}
+.form:focus::-webkit-input-placeholder {
+    color: #999999;
+}
+.form:focus::-moz-placeholder {
+    color: #999999;
+}
+/* Error Placeholder */
+
+.form .error::-webkit-input-placeholder {
+    color: rgba(255, 80, 80, 0.4);
+}
+.form .error::-moz-placeholder {
+    color: rgba(255, 80, 80, 0.4);
+}
+.form .error:focus::-webkit-input-placeholder {
+    color: rgba(255, 80, 80, 0.7);
+}
+.form .error:focus::-moz-placeholder {
+    color: rgba(255, 80, 80, 0.7);
+}
+/*--------------------
+       Disabled
+---------------------*/
+
+.form .field:disabled, .form .field.disabled {
+    opacity: 0.5;
+}
+.form .field.disabled label {
+    opacity: 0.5;
+}
+.form .field.disabled:disabled {
+    opacity: 1;
+}
+/*--------------------
+        Sizes
+---------------------*/
+
+$form-size:( form-massive: 22, form-huge: 20, form-big: 18, form-large: 16, form-small: 14, form-mini: 12, );
+@each $ClassNmae, $Size in $form-size {
+    .#{$ClassNmae}{
+        &.form{
+            @include font-size($Size,$Size+2);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+
+/***********************************************************************************************/
+/* Page Section */
+/***********************************************************************************************/
+
+.section{  
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+.background-image-hide {
+    position: absolute;
+    top: -30px;
+    height: 150%;
+    width: 100%;
+    background-size: cover !important;
+    z-index: 0;
+    background-position: 50% 50% ;
+}
+.page-section-content{
+    padding: $section-padding 0;
+    position:relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+.page-section{
+        z-index: 5;
+        position: relative;
+         .topaz-line{
+             &:before,&:after{
+                border-bottom: 1px solid #fff;
+            }
+         }
+    }

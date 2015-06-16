@@ -1,0 +1,91 @@
+/**
+* Important Files
+**/
+
+/*Form*/
+.textarea, .form textarea {
+    min-height: 8em;
+    height: 8em;
+    resize: none;
+}
+.widget-content .field {
+    margin-bottom: 10px;
+}
+
+/**
+ * Sections
+ */
+.demo-section-cover {
+    position: absolute;
+    background-position: center center;
+    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-attachment: fixed;
+    top: 0;
+    @include start(0);
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+}
+.with-top-border {
+    border-top: 1px solid $border-color;
+}
+
+/**
+ * Background and colors
+ */
+.black-bg {
+    background-color: #222;
+}
+.green-color {
+    color: green;
+}
+.red-color {
+    color: red;
+}
+.undertitle {
+    color: #FFFFFF;
+}
+
+
+/** 
+ * magnific-popup
+ */
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 55;
+}
+.mfp-zoom-in {
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s ease-in-out; 
+    transform: scale(0.8); 
+  }  
+  &.mfp-bg {
+    opacity: 0;
+      transition: all 0.3s ease-out;
+  }  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1); 
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }  
+  /* animate out */
+  &.mfp-removing {
+    .mfp-with-anim {
+      transform: scale(0.8); 
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }    
+  }  
+}

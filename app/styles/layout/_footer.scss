@@ -1,0 +1,115 @@
+/***********************************************************************************************/
+/* FOOTER */
+/***********************************************************************************************/
+.top-footer{
+    position: relative;
+    background: $footer-bg-top;
+    padding:70px 0;
+    padding-bottom: 50px;
+     h3{
+        color: darken($footer-color,10%);
+     }
+     p{
+        color: $footer-color;
+        margin-bottom: 0px;
+     }
+     i{
+      color: $footer-color;
+     }
+     h6{
+      color:$footer-link ;
+     }
+    a{
+        color:$footer-link ;
+        @include transition(all .2s ease-in);
+        &:hover{
+          color: $theme-color;
+        }
+      }
+     .widget{
+      .widget-title{
+        padding-bottom: 30px;
+        margin-bottom: 0;
+        color: $footer-header-color;
+        &.with-border{
+           border-bottom: 1px solid $footer-bordre-color;
+           margin-bottom: 20px;
+        }
+      }
+      .widget-content{
+        padding: 0 0 20px 0; 
+
+        hr{
+          margin : 0;
+          padding: 0px;
+          margin-bottom: 20px;
+          border-color: $footer-color; 
+        }        
+      }
+    }
+
+    .tweet-footer{
+      ul{
+
+        li{
+          display: block;
+          padding: 20px 0;
+          border-top: 1px solid $footer-bordre-color;
+          p{
+            margin-bottom: 0px;
+            &.tweet{
+              span ,a{
+                 color:$theme-color;
+              }             
+            }
+          }
+          .timePosted{
+            color: $body-text-color;
+          }
+        }
+      }
+    }
+}
+
+footer{ 
+  position: relative;
+  a{
+    color:#FFFFFF;
+    padding: 5px;
+    @include transition(all .2s ease-in);
+    &:hover{
+      color: $theme-color;
+    }
+  }
+
+ 	&.demo-footer{
+    background-color: $footer-bg-bottom;
+    color: $footer-color;
+    padding: 35px 0; 
+
+    .demo-menu{
+      margin-top: 5px;
+    } 
+
+    .copyright {
+        @include float_start();
+         p{
+           color: $footer-bottom-color;
+           margin-bottom: 0px;
+         }    
+    }
+
+  } 	
+}
+
+@media only screen and (max-width: $MobileLandscapeMax) {
+  footer {
+    .copyright  {
+    float: none;
+    text-align: center;
+    }
+  }
+}
+
+
+

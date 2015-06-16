@@ -1,0 +1,66 @@
+/***********************************************************************************************/
+/* Menu of categories filters /
+/***********************************************************************************************/
+
+.filters {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 50px;
+    ul {
+        padding: 0;
+        li {
+            cursor: pointer;
+            a {
+                color: $header-font-color;
+                font-weight: 400;
+                height: auto;
+                @include transition(all .2s ease-in);
+                box-shadow: none;
+                &:hover {
+                    color: $theme-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+/***************/
+/*  Style Two  */
+/***************/
+
+.filters-box {
+    &.filters {
+        ul {
+            border: none;
+            li {
+                display: inline-block;
+                margin: 4px;
+                a {
+                    border: 1px solid $border-color;
+                    padding: 0.75em 1em;
+                    font-size: 14px;
+                    display: inline-block;
+                    background: $section-bg-color;
+                    //min-width: 90px;
+                    @if($border-radius!=0) {
+                        @include border-radius($border-radius);
+                    }
+                    width: 100%;
+                    &:hover {
+                        border: 1px solid $theme-color;
+                        color: #FFF;
+                        background: $theme-color;
+                    }
+                }
+            }
+            .current {
+                a {
+                    border: 1px solid $theme-color;
+                    color: #FFF;
+                    background: $theme-color;
+                }
+            }
+        }
+    }
+}

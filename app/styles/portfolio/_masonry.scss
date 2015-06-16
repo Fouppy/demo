@@ -1,0 +1,67 @@
+/***********************************************************************************************/
+/* Masonry Style /
+/***********************************************************************************************/
+
+.masonry{ 
+
+  .with-margin{
+    &.column_3{
+      .demo-masonry-145{
+         padding-bottom: 155.7%;
+      }
+      .demo-masonry-30{
+       padding-bottom: 36.4%;
+      }
+    }
+    &.column_4{
+      .demo-masonry-145{
+         padding-bottom: 159.7%;
+      }
+      .demo-masonry-30{
+       padding-bottom: 35.9%;
+      }
+    }
+    &.column_4{
+      .demo-masonry-111{
+        padding-bottom: 111.11%;
+      }
+    }       
+  }
+  
+}
+  .isotope-item .work-item img {
+     @include box-shadow(inset 0px -10px 0px #fff);
+     position: absolute;
+     height: 100%;
+     //width: auto !important;   
+     max-width: none;  
+     top: 0;
+     left: 0;     
+  }
+
+
+  .demo-masonry-145{
+     padding-bottom: 150%;
+  }
+
+  .demo-masonry-100{
+     padding-bottom: 100%;
+  }
+
+  .demo-masonry-111{
+     padding-bottom: 111%;
+  }
+
+  .demo-masonry-75{
+     padding-bottom: 75%;
+  }
+
+  .demo-masonry-30{
+     padding-bottom: 37.5%;
+  }
+
+  .demo-masonry-50 {
+    padding-bottom: 48.5%;
+  }
+
+

@@ -1,0 +1,97 @@
+/**
+ * [Theme Color]
+ */
+$theme-color: #fc0;
+$border-color: #d0cdbc;
+
+/**
+ * [User Interface Colors]
+ */
+$body-bg-color: #FFFFFF;
+$content-bg-color: #FFFFFF;
+$section-bg-color: #faf9f5;
+$box-bg-color:#faf9f5;
+$widget-bg-color: $content-bg-color;
+
+/**
+ * [Typo Colors]
+ */
+$header-font-color: #000;
+$header-link-color: #384047;
+$body-text-color: #828077;
+$body-link-color: $theme-color;
+$body-link-hover-color: darken($body-link-color, 15%);
+
+/**
+ * [menu Colors]
+ */
+$nav-bg-color: #ffffff;
+$nav-bg-color-top-style: #FFFFFF;
+$nav-text-color: $header-font-color;
+$nav-text-hover-color: $theme-color;
+$nav-shadow:#a6a498;
+
+/* Menu Icon*/
+$bt-color: #919191;
+$bt-bg-color: #FFFFFF;
+$bt-bg-hover: #FFFFFF;
+
+/**
+ * [Container Title]
+ */
+$title_con_bg: $header-font-color;
+$title_con_color: #FFFFFF;
+
+/**
+ * [Divider Colors]
+ */
+$hr-color: $border-color;
+
+/**
+ *     Button
+ */
+ $radius-var:0;
+ $btn-border-color:$theme-color;
+ $default-btn-bg-color:$theme-color;
+ $default-btn-color:#fff;
+ $border:1px;
+ 
+ /*--- colors fill---*/
+ $fill-btn-color:#fff;
+ $fill-btn-color-hover:#fff;
+
+ /*--- colors stroke---*/
+ $btn-stroke-color: $btn-border-color;
+ $btn-stroke-color-hover:#fff;
+
+/**
+ * [Alert Colors]
+ */
+$info-color: #0288d1;
+$error-color: #e74c3c;
+$warning-color: #ffbc00;
+$success-color: #7cb342;
+
+/**
+ * [Quote  Color]
+ */
+$quote-bg:$header-font-color;
+$quote-text-color:#FFFFFF;
+
+/**
+ * [Testimonial Color]
+ */
+$testimonial-bg:#FFFFFF;
+
+/**
+ * Footer Colors
+ */
+//Bottom Footer
+$footer-bg-bottom: #000;
+$footer-bottom-color: #FFFFFF;
+
+$footer-bg-top: lighten($footer-bg-bottom, 5%);;
+$footer-color: #FFFFFF;
+$footer-link: #FFFFFF;
+$footer-header-color: #FFFFFF;
+$footer-bordre-color: $header-font-color;

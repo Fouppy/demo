@@ -1,0 +1,155 @@
+/*******************/
+/*     divider     */
+/*******************/
+
+/*Line*/
+.diamond-line{
+  &.full{
+    width: 100%;
+    &:before,&:after{
+      width: 48%;
+    }
+  }
+  position: relative;
+  color: $theme-color;
+  width: 160px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 33px;
+  @include font-size(24,24);
+  text-align: center; 
+  
+  &:before,&:after{
+    content: '';
+    position: absolute;
+    border-bottom: 1px solid $hr-color;
+    display: block;
+    width: 60px;
+    top: 11px;
+  }
+
+  &:before{
+    @include end(0);
+  }
+
+  &:after{
+    @include start(0);
+  }
+ 
+   &.quote{
+    margin-top: 0px !important;
+    @include font-size(24,24);
+    &:before,&:after{
+    top: 13px;
+    }
+  }
+
+  &.hr-left {
+
+    @include float_start();
+    @include start(-6px);
+    position: absolute;
+    top: -9px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        border-bottom: 1px solid $hr-color;
+        display: block;
+        width: 60px;
+        top: 4px;
+    }
+
+       &:before{
+        content: none;
+        top: 4px;
+       }
+}
+
+}
+
+.line-hr {
+    position: relative;
+    width: 160px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 33px;
+    border-bottom: 1px solid $hr-color;
+}
+
+hr{
+	clear: both;
+	display: block;
+	height: 1px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-style: solid;
+  border-color:$hr-color;
+	position: relative;
+	padding: 35px 0 0;
+	margin: 0 0 35px;
+	float: none;
+	width:100%
+} 
+
+.hr-start,.hr-end {
+	   clear: both;
+	   display: block;
+	   position: relative;
+	   padding: 0 0 45px 0;
+     i{
+          position: relative;
+          color: $theme-color;
+          @include font-size(10,10);
+      }
+}
+
+    .hr-start {
+      i{
+        @include float_start();
+      }
+        //@include float_start();
+        width: 100%;
+        &:after {
+           content: '';
+           position: absolute;
+           border-bottom: 1px solid $hr-color;
+           display: block;
+           width: 150px;
+           @include start(15px);
+           top: 5px; 
+        }
+    }
+
+    .hr-end {
+      i{
+        @include float_end();
+      }
+        //@include float_end();
+        width: 100%;
+    	  &:before {
+           content: '';
+           position: absolute;
+           border-bottom: 1px solid $hr-color;
+           display: block;
+           width: 150px;
+           @include end(15px);
+           top: 5px; 
+        }
+    }
+
+
+
+.divider{
+	padding: 35px 0 0;
+	margin: 0 0 35px;
+    border-bottom: 1px solid transparent;
+    clear: both;
+	.dashed {
+	 border-bottom: 1px dashed $hr-color;
+    }
+    .double {
+       border-bottom: 3px double $hr-color;
+     }
+}

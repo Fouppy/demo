@@ -1,0 +1,48 @@
+/**
+ * [param: rtl OR ltr ]
+ * @type {[String]}
+ */
+$global-direction:ltr !default;
+
+
+/**
+ * [param: box-sizing ]
+ * @type {[String]}
+ */
+$boxModel: border-box !default;
+
+/**
+ * [Section padding]
+ * @type {[type]}
+ */
+$section-padding : 6.250em;
+$section-padding-mini : 6.250em/2;
+$border-radius: 0px;
+/**
+ * [Responsive variables]
+ * @type {[px]}
+ */
+$maxWidthExtraLarge: 1260px; 
+$maxWidth:           1010px;     
+$maxWidthLarge:      1170px;    
+$maxWidthTablet:     782px;             
+$maxWidthMobileLarge:478px;      
+$maxWidthMobileSmall:318px;         
+
+$DesktopExtraLarge:  1600px;
+$DesktopLarge:       1140px;
+$TabletPortraitMin:  768px;
+$TabletPortraitMax:  989px;
+$MobilePortrait:     767px;
+$MobileLandscapeMin: 480px;
+$MobileLandscapeMax: 767px;
+
+/**
+ * Default menu
+ */
+$a-height: 110;
+$a-height-tablet: 90;
+$a-height-small: 100;
+$font-size: 14;
+$logo-height:95;
+$menu-itms-gutter:15px;

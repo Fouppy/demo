@@ -1,0 +1,100 @@
+.box-circle {
+        header {
+            i {
+                text-align: center;
+                @include box-shadow(0 0 0 1px $border-color);
+                .diamond-border, .diamond-hover {
+                    &:before, &:after {
+                        top: 5px;
+                        @include end(5px);
+                        bottom: 5px;
+                        @include start(5px);
+                    }
+                }
+            }
+        }
+        &.box-circle {
+            header {
+                i {
+                    @include border-radius(50%);
+                    .diamond-hover:after, .diamond-hover:before {
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        &:hover {
+            header {
+                i {
+                    background: $theme-color !important;
+                    color: #FFF;
+                    @include box-shadow(0 0 0 1px #FFF);
+                }
+                .diamond-hover:before, .diamond-hover:after {
+                    opacity: 1;
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    /*SERVICES BOX*/
+    
+    .services {
+        header {
+            margin-bottom: 18px;
+            i {
+                position: relative;
+                color: $header-font-color;
+                font-size: 65px;
+                margin: 0 auto;
+                margin-bottom: 35px;
+                display: block;
+                @include transition(all .2s ease-in);
+            }
+            @include headings() {
+                margin-bottom: 0px;
+            }
+        }
+        &:hover {
+            i, h1, h2, h3 h4, h5, h6 {
+                color: $theme-color;
+            }
+        }
+        p {
+            &.withpadding {
+                padding: 0 9%;
+            }
+        }
+    }
+    /**
+ * Icons Box Size
+ */
+    
+    .icon-normal {
+        @include margin-end(5px);
+        color: $header-font-color;
+        @include text_align_start;
+        display: inline-block;
+    }
+    .icon-box-larg {
+        width: 168px;
+        height: 168px;
+        font-size: 70px;
+        line-height: 168px;
+        margin-bottom: .5em;
+    }
+    .icon-box-medium {
+        width: 125px;
+        height: 125px;
+        font-size: 50px;
+        line-height: 125px;
+        margin-bottom: .4em;
+    }
+    .icon-box-small {
+        width: 64px;
+        height: 64px;
+        font-size: 30px;
+        line-height: 64px;
+        margin-bottom: .3em;
+    }

@@ -1,0 +1,481 @@
+ /* COMPILED WITH SASS      
+ *   #Base 960 Grid
+ *   #Tablet 
+ *   #Mobile
+ *   #Clearing 
+ ***/
+
+*,
+:before,
+:after {
+  box-sizing: $boxModel;
+}
+
+ $gutter: 30px; 
+ $columns: 12; 
+ $flexGutter: 3%;
+
+ body div .first, body div .no-margin {
+     @include margin-start(0!important);
+ }
+ .all_content {
+     width: 100%;
+     position: relative;     
+ }
+ html.responsive {
+     min-width: 0px;
+ }
+ .boxed {
+     margin: 0 auto;
+     overflow: visible;
+ }
+
+@mixin units() {
+     @include float_start();
+     display: inline;
+     @include margin-start($gutter);
+     position: relative;
+     min-height: 1px;
+}
+@mixin columns($num: 1) {
+    $contentWidth: ($maxWidth - (2 * $gutter));
+    $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+    width: ($single * $num) + ($gutter * ($num - 1));
+    @include units();
+}
+@mixin container($num: 1) {
+    $contentWidth: ($maxWidth - (2 * $gutter));
+    $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+    width: ($single * $num) + ($gutter * ($num - 1));
+}
+@mixin offset($num: 1) {
+    $contentWidth: ($maxWidth - (2* $gutter));
+    $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+    @include margin-start( ($single + $gutter) * $num + $gutter);
+}
+
+ /*Base 960 Grid*/
+
+ .container {
+     position: relative;
+     @include container(12);
+     margin: 0 auto;
+     padding: 0px;
+     clear: both;
+ }
+ .container_wrap {
+     clear: both;
+     position: relative;
+     border-top-style: solid;
+     border-top-width: 1px;
+ }
+ .row {
+     position: relative;
+     margin-bottom: 20px;
+     clear: both;
+ }
+ .boxed {
+     width: $maxWidth;
+ }
+ .boxed .fix_nav.fixed {
+     width: $maxWidth;
+ }
+ body div .first {
+     @include margin-start(0);
+     @include clear_start();
+ } 
+ 
+ $i: $columns;
+ @while $i > 0 {
+    .container .cl_#{$i} {
+        @include columns($i);
+    }
+    @if $i == $columns {
+        .container .cl_#{$i} {
+          @include margin-start(0);
+        }
+    }
+    $i: $i - 1
+ }
+
+ $i: $columns - 1;
+ @while $i > 0 {
+     .offset-by-#{$i} {
+         @include offset($i);
+     }
+     $i: $i - 1
+ }
+ /*!Base 960 Grid*/
+
+ /*Desktop Large Grid*/
+ @media only screen and (min-width: $DesktopLarge) {
+     @mixin LD-columns($num: 1) {
+         $contentWidth: ($maxWidthLarge - (2* $gutter)); // 
+         $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+         width: ($single * $num) + ($gutter * ($num - 1));
+     }
+     @mixin LD-offset($num: 1) {
+         $contentWidth: ($maxWidthLarge - (2* $gutter));
+         $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+         @include margin-start( ($single + $gutter) * $num !important);
+     }
+     .boxed {
+         width: $maxWidthLarge;
+     }
+     .boxed .fix_nav.fixed {
+         width: $maxWidthLarge;
+     }
+     .responsive .container {
+         @include LD-columns(12);
+     }
+
+      $i: $columns;
+      @while $i > 0 {
+         .container .cl_#{$i} {
+             @include LD-columns($i);
+         }
+         @if $i == $columns {
+          .container .cl_#{$i} {
+            @include margin-start(0);
+          }
+         }
+         $i: $i - 1
+      }
+
+      $i: $columns - 1;
+      @while $i > 0 {
+          .offset-by-#{$i} {
+              @include LD-offset($i);
+          }
+          $i: $i - 1
+      }
+ }
+ /*!Desktop Large Grid*/
+
+ /*Desktop Extra Large Grid*/
+ @media only screen and (min-width: $DesktopExtraLarge) {
+     @mixin EL-columns($num: 1) {
+         $contentWidth: ($maxWidthExtraLarge - (2* $gutter));
+         $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+         width: ($single * $num) + ($gutter * ($num - 1));
+     }
+     @mixin EL-offset($num: 1) {
+         $contentWidth: ($maxWidthExtraLarge - (2* $gutter));
+         $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+         @include margin-start( ($single + $gutter) * $num !important);
+     }
+     .boxed {
+         width: $maxWidthExtraLarge;
+     }
+     .boxed .fix_nav.fixed {
+         width: $maxWidthExtraLarge;
+     }
+
+
+     .responsive .container {
+         @include EL-columns(12);
+     }
+
+      $i: $columns;
+      @while $i > 0 {
+         .container .cl_#{$i} {
+             @include EL-columns($i);
+         }
+         @if $i == $columns {
+          .container .cl_#{$i} {
+            @include margin-start(0);
+          }
+         }
+         $i: $i - 1
+      }
+
+      $i: $columns - 1;
+      @while $i > 0 {
+          .offset-by-#{$i} {
+              @include EL-offset($i);
+          }
+          $i: $i - 1
+      }
+ }
+ /*!Desktop Extra Large Grid*/
+
+ /*Tablet Grid*/
+ @media only screen and (min-width: $TabletPortraitMin) and (max-width: $TabletPortraitMax) {
+     .responsive {
+         overflow-x: hidden;
+     }
+     @mixin T-columns($num: 1) {
+         $contentWidth: ($maxWidthTablet - (2* $gutter));
+         $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+         width: ($single * $num) + ($gutter * ($num - 1));
+     }
+     @mixin T-offset($num: 1) {
+         $contentWidth: ($maxWidthTablet - (2* $gutter));
+         $single: ($contentWidth - ($gutter * ($columns - 1))) / $columns;
+         @include margin-start( ($single + $gutter) * $num !important);
+     }
+     .boxed {
+         width: $maxWidthTablet;
+     }
+     .boxed .fix_nav.fixed {
+         width: $maxWidthTablet;
+     }
+     .responsive .container {
+         @include T-columns(12);
+     }
+
+     $i: $columns;
+     @while $i > 0 {
+        .container .cl_#{$i} {
+            @include T-columns($i);
+        }
+        @if $i == $columns {
+         .container .cl_#{$i} {
+           @include margin-start(0);
+         }
+        }
+        $i: $i - 1
+     }
+
+     $i: $columns - 1;
+     @while $i > 0 {
+         .offset-by-#{$i} {
+             @include T-offset($i);
+         }
+         $i: $i - 1
+     }
+
+     //Use in Pricing Table
+     //issues with portfolio 4 columns with 48%
+     .no-margin.di_1_of_4 {
+         width: 50% !important
+     }
+ }
+ /*!Tablet (Portrait) Grid*/
+
+ /*Mobile (Portrait) Grid*/
+ @media only screen and (max-width: $MobilePortrait) {
+     .responsive {
+         overflow-x: hidden;
+     }
+
+     .boxed {
+         width: 85%;
+     }
+     
+     .responsive .container {
+         width: 85%;
+         margin: 0 auto;
+     }
+     .responsive .container .cl_1, .responsive .container .cl_2, .responsive .container .cl_3, .responsive .container .cl_4, .responsive .container .cl_5, .responsive .container .cl_6, .responsive .container .cl_7, .responsive .container .cl_8, .responsive .container .cl_9,
+     .responsive .container .cl_10,
+     .responsive .container .cl_11, 
+     .responsive .container .cl_12{
+         margin: 0;
+         margin-bottom: 30px;
+         width: 100% !important;
+     }
+     .responsive .isotope-item.no-margin {
+         width: 100% !important;
+         @include margin-start(0);
+         margin-bottom: 0px;
+     }
+     .responsive .offset-by-1, .responsive .offset-by-2, .responsive .offset-by-3, .responsive .offset-by-4, .responsive .offset-by-5, .responsive .offset-by-6, .responsive .offset-by-7, .responsive .offset-by-8, .responsive .offset-by-9, .responsive .offset-by-10, .responsive .offset-by-11 {
+         @include margin-start(0);
+     }
+     .responsive .offset_2_of_3, .responsive .offset_2_of_5, .responsive .offset_3_of_4, .responsive .offset_3_of_5, .responsive .offset_4_of_5,.responsive .offset_1_of_1, .responsive .offset_1_of_2, .responsive .offset_1_of_3, .responsive .offset_1_of_4, .responsive .offset_1_of_5, .responsive .offset_1_of_6, .responsive .offset_1_of_7, .responsive .offset_1_of_8, .responsive .offset_1_of_9, .responsive .offset_1_of_10, .responsive .offset_1_of_11, .responsive .offset_1_of_12 {
+         @include margin-start(0 !important);
+     }     
+   
+    .responsive [class*="di_"],.responsive .no-margin[class*="di_"]{
+          margin: 0; 
+          margin-bottom: 30px; 
+          width: 100%;
+    }
+ }
+ /*!Mobile (Portrait) Grid*/
+
+ /*Columns for better content separation*/
+ @mixin flexWidth($length: 1, $columns: 1, $flexGutter: 3%) {
+     position: relative;
+     width: (((100% - ($flexGutter * ($columns - 1))) / $columns) * $length) + ($flexGutter * ($length - 1));
+     @include float_start();
+ } 
+
+ @mixin flexMargin($length: 1, $columns: 1, $flexGutter: 3%) {
+     @include margin-start( (((100% - ($flexGutter * ($columns - 1))) / $columns) * $length) + ($flexGutter * ($length - 1)) + $flexGutter );
+ }
+
+ $i: $columns;
+ @while $i > 0 {
+      div .di_1_of_#{$i} {
+          @include margin-start($flexGutter);
+          @include flexWidth(1, $i, $flexGutter);
+      }
+      @if $i == 1 {
+        div .di_1_of_#{$i} {
+         @include margin-start(0);
+         @include flexWidth(1, $i, $flexGutter);
+        }
+      }
+      $i: $i - 1
+ }
+
+ div .di_2_of_3 {
+     @include margin-start($flexGutter);
+     @include flexWidth(2, 3, $flexGutter);
+ }
+ div .di_2_of_5 {
+     @include margin-start($flexGutter);
+     @include flexWidth(2, 5, $flexGutter);
+ }
+ div .di_3_of_4 {
+     @include margin-start($flexGutter);
+     @include flexWidth(3, 4, $flexGutter);
+ }
+ div .di_3_of_5 {
+     @include margin-start($flexGutter);
+     @include flexWidth(3, 5, $flexGutter);
+ }
+ div .di_4_of_5 {
+     @include margin-start($flexGutter);
+     @include flexWidth(4, 5, $flexGutter);
+ }
+ div .di_5_of_9 {
+     @include margin-start($flexGutter);
+     @include flexWidth(5, 9, $flexGutter);
+ }
+ div .di_4_of_9 {
+     @include margin-start($flexGutter);
+     @include flexWidth(4, 9, $flexGutter);
+ }
+
+/*offset*/
+$i : $columns;
+@while $i > 1 {
+  div .offset_1_of_#{$i} {
+      @include flexMargin(1, $i, $flexGutter)
+  }
+  $i: $i - 1
+} 
+
+div .offset_2_of_3 {
+    @include flexMargin(2, 3, $flexGutter)
+}
+div .offset_2_of_5 {
+    @include flexMargin(2, 5, $flexGutter)
+}
+div .offset_3_of_4 {
+   @include flexMargin(3, 4, $flexGutter)
+}
+div .offset_3_of_5 {
+    @include flexMargin(3, 5, $flexGutter)
+}
+div .offset_4_of_5 {
+    @include flexMargin(4, 5, $flexGutter)
+}
+/*!Columns for better content separation*/
+
+/*No Margin*/
+$i : $columns;
+@while $i > 0 {
+  .no-margin.di_1_of_#{$i} {
+       width: (100% / $i)
+  }
+  $i: $i - 1
+} 
+.no-margin.di_2_of_3 {
+    width: (200% / 3);
+}
+.no-margin.di_2_of_5 {
+    width: (200% / 5);
+}
+.no-margin.di_3_of_4 {
+    width: (300% / 4);
+}
+.no-margin.di_3_of_5 {
+    width: (300% / 5);
+}
+.no-margin.di_4_of_5 {
+    width: (400% / 5);
+}
+/*!No Margin*/
+
+/*Columns Loop*/
+.rows {
+        $i : 5;
+        @while $i > 0 {
+           @if $i == 1{
+             .di_1_of_#{$i} {
+               &:nth-child(2n), &:first-child {
+                 @include margin-start(0);
+                 @include clear-start();
+               }
+             }
+           }@else {
+            .di_1_of_#{$i} {
+              &:nth-child(#{$i}n + 1), &:first-child {
+                  @include margin-start(0);
+                  @include clear-start();
+              }
+            }
+        }
+          $i: $i - 1
+        } 
+}
+/*!Columns Loop*/
+
+
+
+ /*PORTFOLIO*/
+ .column_4 {
+     .boxed-portfolio {
+         [class*="di_"] {
+             margin: 0;
+             padding: 0 1.1% 2.2% 1.1%;
+             &.no-margin {
+                 margin: 0 !important;
+             }
+         }
+         .di_1_of_2 {
+             @include flexWidth(1, 2, 4.5%);
+             &.no-margin {
+                 margin: 0 !important;
+                 padding: 0 !important;
+                 width: 49.99%;
+             }
+         }
+     }
+ }
+ .column_3 {
+     .boxed-portfolio {
+         [class*="di_"] {
+             margin: 0;
+             padding: 0 0.9% 1.8% 0.9%;
+             &.no-margin {
+                 margin: 0 !important;
+             }
+         }
+         .di_2_of_3 {
+             @include flexWidth(2, 3, 6.6%);
+             &.no-margin {
+                 margin: 0 !important;
+                 padding: 0 !important;
+                 width: 66.75%;
+             }
+         }
+     }
+ }
+  .column_2 {
+     .boxed-portfolio {
+         [class*="di_"] {
+             width: 47.5%;
+             margin: 0 !important;
+             padding: 0 1.2% 2% 1.2% !important;
+             &.no-margin {
+                 margin: 0 !important;
+             }
+         }
+     }
+ }
+ /*!PORTFOLIO*/

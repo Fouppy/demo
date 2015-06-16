@@ -1,0 +1,26 @@
+@function rhythm($lines: 1, $font-size: $base-font-size, $offset: 0) {
+
+  @if not $relative-font-sizing and $font-size != $base-font-size {
+    @warn "$relative-font-sizing is false but a relative font size was passed to the rhythm function";
+  }
+
+  $rhythm: $font-unit * ($lines * $base-line-height - $offset) / $font-size;
+  // Round the pixels down to nearest integer.
+  @if unit($rhythm) == px {
+    $rhythm: floor($rhythm);
+  }
+
+  @return $rhythm;
+}
+
+@function em($size-in-px, $context: 16) {
+  //Convert pixels to ems
+  @if not unitless($size-in-px) {
+      $size-in-px: strip-units($size-in-px);
+  }
+  @if not unitless($context) {
+      $context: strip-units($context);
+  }
+  @return ($size-in-px / $context) * 1em;
+}
+
