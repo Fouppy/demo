@@ -106,7 +106,15 @@
         <div class="di_1_of_2 widget">
           <h5 class="widget-title uppercase">instagram</h5>
           <div class="widget-content" ng-controller="InstagramCtrl">
-            <a class="di_1_of_5" href="{{p.link}}" target="_blank" ng-repeat="p in pics | orderBy:orderBy | limitTo:12"><img ng-src="{{p.images.low_resolution.url}}" title="{{p.caption.text}}"></a>
+            <div class="instagram-item di_1_of_5" ng-repeat="p in pics | orderBy:orderBy | limitTo:15" ng-class="{first:!($index % 5)}">
+              <img ng-src="{{p.images.low_resolution.url}}" title="{{p.caption.text}}">
+              <div class="link_overlay">
+                <ul class="icons-media">
+                  <li><a data-animated-link="fadeOut" href="{{p.link}}" target="_blank"><i class="fa fa-external-link"></i></a></li>
+                </ul>
+                <span class="diamond-hover"></span>
+              </div>
+            </div>
           </div>
         </div>
         <!--! LATEST INSTAGRAM WIDGET -->

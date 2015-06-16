@@ -11,7 +11,7 @@ angular.module('demoApp')
   .controller('InstagramCtrl', function($scope, $interval, instagram) {
     $scope.pics = [];
     $scope.have = [];
-    $scope.orderBy = '-likes.count';
+    $scope.orderBy = '-created_time';
     $scope.getMore = function() {
       instagram.fetchPopular(function(data) {
         for(var i=0; i<data.length; i++) {

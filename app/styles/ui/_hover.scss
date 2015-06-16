@@ -114,7 +114,7 @@
 /**
  * Apply Hover link_overlay
  */
-.work-item  {
+.work-item, .instagram-item  {
     &:hover {
         .link_overlay {
             background: $theme-color;
