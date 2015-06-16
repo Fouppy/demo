@@ -2,13 +2,6 @@
 /* google-maps*/
 /***********************************************************************************************/
 
-.google-maps{
-  position:relative;
-  width: 100%;  
-  .map-conrent{
-    padding:3em 0;
-    position:absolute;
-    width: 100%;
-    z-index: 10;
-  }
+.angular-google-map-container{
+	height: 350px;
 }

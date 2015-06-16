@@ -46,4 +46,8 @@ angular
         v: '3.17',
         libraries: 'weather,geometry,visualization'
     });
+  })
+  .value('flickrConfig', {
+    user_id: '99179128@N07',
+    api_key: '006d5ace5a1ec6e87d501a2753da1bc7'
   });

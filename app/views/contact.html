@@ -15,7 +15,10 @@
   <!-- MAP -->
   <div class="google-maps" ng-controller="MapCtrl">
     <!-- <div id="map2" data-lat="-12.043333" data-lng="-77.028333"></div> -->
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+    <ui-gmap-google-map center='map.center' zoom='map.zoom' options='options'>
+      <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id">
+      </ui-gmap-marker>
+    </ui-gmap-google-map>
   </div>
   <!--! MAP -->
 

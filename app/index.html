@@ -102,25 +102,14 @@
         </div>
         <!--! ABOUT US WIDGET -->
 
-        <!-- LATEST TWEETS WIDGET -->
-        <div class="di_1_of_4 widget ">
-          <h5 class="widget-title uppercase">latest tweets</h5>
-          <div class="widget-content">
-            <div id="tweet" class="tweet tweet-footer" data-id="550345973122490368" data-count="2" data-type="list">
-              <p>Please wait...</p>
-            </div>
+        <!-- LATEST INSTAGRAM WIDGET -->
+        <div class="di_1_of_2 widget">
+          <h5 class="widget-title uppercase">instagram</h5>
+          <div class="widget-content" ng-controller="InstagramCtrl">
+            <a class="di_1_of_5" href="{{p.link}}" target="_blank" ng-repeat="p in pics | orderBy:orderBy | limitTo:12"><img ng-src="{{p.images.low_resolution.url}}" title="{{p.caption.text}}"></a>
           </div>
         </div>
-        <!--! LATEST TWEETS WIDGET -->
-
-        <!-- FLICKR WIDGET -->
-        <div class=" di_1_of_4 widget ">
-          <h5 class="widget-title uppercase">flickr</h5>
-          <div class="widget-content">
-            <ul class="flkr-cont" data-limit="9" data-id="125167502@N02"></ul>
-          </div>
-        </div>
-        <!--! FLICKR WIDGET -->
+        <!--! LATEST INSTAGRAM WIDGET -->
 
       </div>
     </div>
@@ -181,7 +170,6 @@
     <script src="bower_components/angular-knob/src/angular-knob.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
-    <script src="scripts/vendor/owl.carousel.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->    
@@ -196,9 +184,10 @@
     <script src="scripts/controllers/contact.js"></script>
     <script src="scripts/controllers/form.js"></script>
     <script src="scripts/services/getworks.js"></script>
-    <script src="scripts/directives/wrapowlcarousel.js"></script>
     <script src="scripts/controllers/knob.js"></script>
     <script src="scripts/controllers/map.js"></script>
+    <script src="scripts/controllers/instagram.js"></script>
+    <script src="scripts/services/instagram.js"></script>
     <!-- endbuild -->
 </body>
 </html>
