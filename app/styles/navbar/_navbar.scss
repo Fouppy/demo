@@ -40,22 +40,22 @@
                 height: 100%;  
                 @include font-size(0,0);
        
-            img {
-                display: inline-block;
-                vertical-align: middle;
-                max-width: 225px;
-                width:auto;
-                max-height: 150px;
-                height:auto\9;
-                @include transition(all .2s ease-in);
-                &.two {
-                    display: none;
-                }
-                &.one {
+                img {
                     display: inline-block;
+                    vertical-align: middle;
+                    max-width: 225px;
+                    width:auto;
+                    max-height: 100px;
+                    height:auto\9;
+                    @include transition(all .2s ease-in);
+                    &.two {
+                        display: none;
+                    }
+                    &.one {
+                        display: inline-block;
+                    }
                 }
             }
-          }
         }
         nav {
             .demo-nav {

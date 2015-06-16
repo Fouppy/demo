@@ -8,7 +8,6 @@
         windowWidth = w.width(),
         nav = $(".demo-nav").outerHeight(),
         windowHeight = w.height(),
-        tw = $("#tweet"),
         prefix,
         /*Modernizr Var*/
         isTouch = Modernizr.touch, //detect touch devices
@@ -26,7 +25,7 @@
         this.FOUPPY = FOUPPY || {}; //Main Namespace
 
         /**
-         * [ Main Module (Okab) ]
+         * [ Main Module ]
          */
         FOUPPY.NAV = function() {
             /**
@@ -161,178 +160,6 @@
             return build;
         }();
 
-        FOUPPY.ANIMATION = function() {
-            var animations = function() {
-                var elm = $("[data-animate]");
-                elm.each(function() {
-                    var elm = $(this),
-                        dataDelay = elm.attr("data-delay") || 0,
-                        offsetVal = elm.attr("data-offset") || "100%",
-                        trgger = elm.attr("data-trgger") || "false",
-                        a = 0;
-                    var dataAnimate = elm.attr("data-animate");
-                    if (a = dataDelay ? Number(dataDelay) + 10 : 300, !elm.hasClass("animated")) {
-                        $(this).addClass('opacity-zero');
-                        elm.waypoint(function() {
-                            var $this = $(this);
-                            setTimeout(function() {
-                                $this.addClass('show animated ' + dataAnimate);
-                            }, a);
-                        }, {
-                            offset: offsetVal,
-                            triggerOnce: trgger
-                        });
-                    }
-
-                })
-            };
-            var notAnimations = function() {
-                var elm = $("[data-animate]");
-                elm.each(function() {
-                    var elm = $(this),
-                        dataDelay = elm.attr("data-delay") || 0,
-                        offsetVal = elm.attr("data-offset") || "100%",
-                        trgger = elm.attr("data-trgger") || "false",
-                        a = 0;
-                    if (a = dataDelay ? Number(dataDelay) + 300 : 300, !elm.hasClass("animated")) {
-                        $(this).addClass('opacity-zero');
-                        elm.waypoint(function() {
-                            var $this = $(this);
-                            setTimeout(function() {
-                                $this.animate({
-                                    opacity: 1
-                                }, {
-                                    step: function(now, fx) {
-                                        var X = 100 * now;
-                                        $(fx.elem).css("filter", "alpha(opacity=" + X + ")");
-                                    }
-                                });
-                            }, a);
-                        }, {
-                            offset: offsetVal,
-                            triggerOnce: trgger
-                        });
-                    }
-
-                })
-            };
-            var init = function() {
-                if (!Modernizr.mq('only all and (max-width: 480px)')) {
-                    if (isTransitions) {
-                        animations();
-                    } else {
-                        notAnimations();
-                    }
-                }
-            }
-            var build = {
-                init: init
-            };
-            return build;
-        }();
-
-        FOUPPY.LIGHTBOX = function() {
-            var lightBox = function() {
-                var d = $('[data-lightbox="image"]');
-
-                d.click(function(e){
-                    e.preventDefault();
-                })
-                //image    
-                d.magnificPopup({
-                    type: 'image',
-                    closeOnContentClick: !0,
-                    closeBtnInside: !1,
-                    fixedContentPos: !0,
-                    mainClass: "mfp-zoom-in",
-                    image: {
-                        verticalFit: !0
-                    }
-                });
-            };
-
-            var init = function() {
-                lightBox();
-            }
-
-            var build = {
-                init: init,
-                lightBox: lightBox,
-            };
-
-            return build;
-        }();
-
-        FOUPPY.UI = function() {
-            var progress = function() {
-                //progress bar animation
-                setTimeout(function() {
-                    $(".dial").waypoint(function() {
-
-                        //circular                
-                        $('.dial').each(function() {
-
-                            var elm = $(this),
-                                width = elm.attr("data-width"),
-                                perc = elm.attr("value");
-
-                            elm.knob({
-                                'value': 0,
-                                'min': 0,
-                                'max': 100,
-                                "skin": "tron",
-                                "readOnly": true,
-                                "thickness": 0.09,
-                                "displayInput": false,
-                                "bgColor": "rgba(255,255,255,0)",
-                                "linecap": ""
-                            });
-
-                            $({
-                                value: 0
-                            }).animate({
-                                value: perc
-                            }, {
-                                duration: 1000,
-                                easing: 'swing',
-                                progress: function() {
-                                    elm.val(Math.ceil(this.value)).trigger('change');
-                                }
-                            });
-
-                            //circular progress bar color
-                            $(this).append(function() {
-                                elm.parent().parent().find('.circular-bar-content').css('top', -(width / 2 + 10));
-                                elm.parent().parent().find('.circular-bar-content label').text(perc + '%');
-                            });
-
-                        });
-                    }, {
-                        offset: "100%",
-                        triggerOnce: true
-                    });
-                }, 300);
-            };
-            var element_bg = function() {
-                var elm = $("[data-element-bg]");
-                var b = elm.attr("data-element-bg");
-                elm.css({
-                    "background-image": "url(" + b + ")",
-                    "background-position": "100% 100%",
-                    "background-repeat": "no-repeat",
-                });
-            };
-
-            var init = function() {
-                progress();
-                element_bg();
-            }
-            var build = {
-                init: init,
-            };
-            return build;
-        }();
-
         FOUPPY.EVENT = function() {
             var event = function() {
                 //Fix The Navbar 
@@ -344,21 +171,6 @@
                         $(".fix-two").show_navbar();
                     }
                 }
-                //Set parent height
-                if (windowWidth > 767) {
-                    $('.set-parent-height').each(function() {
-                        var parentHeight = $(this).parent().height();
-                        $(this).css("height", parentHeight);
-                    });
-                }
-                //Add class active Based on URL http://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/
-                $('.sidebar li a[href^="' + location.pathname.split("/")[2] + '"]').parent().addClass('active');
-
-
-                $('.section-colored').each(function() {
-                    var bg = $(this).attr("data-bg");
-                    $(this).css("background-color", bg);
-                });
 
             };
             var init = function() {
@@ -383,18 +195,8 @@
                 }
             };
 
-            var parentSize = function() {
-                if (windowWidth > 767) {
-                    $('.set-parent-height').each(function() {
-                        var parentHeight = $(this).parent().height();
-                        $(this).css("height", parentHeight);
-                    });
-                }
-            };
-
             var init = function() {
                 nav();
-                parentSize();
             };
             var READY = {
                 init: init,
@@ -403,15 +205,12 @@
         }();
 
         // runs callback functions
-        FOUPPY.OKABREADY = function() {
+        FOUPPY.DEMOREADY = function() {
 
             var init = function() {
                 //Please don't change the order
-                FOUPPY.LIGHTBOX.init();
-                FOUPPY.ANIMATION.init();
                 FOUPPY.NAV.init();
                 FOUPPY.SCROLL.init();
-                FOUPPY.UI.init();
 
                 FOUPPY.EVENT.init();
                 w.resize(function() {
@@ -428,7 +227,7 @@
         /**
          * Call Our Setups Functions
          */
-        FOUPPY.OKABREADY.init();
+        FOUPPY.DEMOREADY.init();
 
     });
 

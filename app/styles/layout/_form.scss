@@ -191,6 +191,12 @@ input.radio:checked, input[type="radio"]:checked {
     }
     
 }
+
+.form .field .invalid {
+    color: #D95C5C;
+    font-size: 12px;
+    font-weight: bold;
+}
 /*--------------------
     Focus ERROR
 ---------------------*/
