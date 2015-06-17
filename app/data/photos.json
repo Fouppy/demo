@@ -1,0 +1,27 @@
+[
+  {
+  	"id": 1,
+  	"src": "images/slider/img00.jpg",
+  	"description": "Image 00"
+  },
+  {
+  	"id": 2,
+  	"src": "images/slider/img01.jpg",
+  	"description": "Image 01"
+  },
+  {
+  	"id": 3,
+  	"src": "images/slider/img02.jpg",
+  	"description": "Image 02"
+  },
+  {
+  	"id": 4,
+  	"src": "images/slider/img03.jpg",
+  	"description": "Image 03"
+  },
+  {
+  	"id": 5,
+  	"src": "images/slider/img04.jpg",
+  	"description": "Image 04"
+  }
+]

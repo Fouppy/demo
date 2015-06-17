@@ -13,6 +13,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngTouch',
+    'ngAnimate',
     'wu.masonry',
     'zumba.angular-waypoints',
     'ui.knob',
